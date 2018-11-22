@@ -7,6 +7,17 @@
 	<script src="controller.js"></script>
 </head>
 <body ng-controller="PrimerControlador">
-	hola {{nombre}}
+	<input type="text" ng-model="nuevaPersona.nombre">
+	<br>
+	<input type="text" ng-model="nuevaPersona.apellido">
+	<br>
+	<input type="text" ng-model="nuevaPersona.edad">
+	<button ng-click="agregarPersona()">Agregar persona</button>
+	<h3>Personas</h3>
+	<ul>
+		<li ng-repeat="persona in personas">
+			{{persona.nombre}} - {{persona.apellido}} - {{persona.edad}}
+		</li>
+	</ul>
 </body>
 </html>
