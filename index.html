@@ -4,20 +4,22 @@
 	<meta charset="utf-8">
 	<title>Controlador</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
-	<script src="controller.js"></script>
 </head>
-<body ng-controller="PrimerControlador">
-	<input type="text" ng-model="nuevaPersona.nombre">
+<body ng-controller="PrimerControlador">	
+	<label for="ingresarNombre">Nombre:</label>
+	<input type="text" name="ingresarNombre" id="ingresarNombre" ng-model="nuevaPersona.nombre"><br>
+	<label for="ingresarApellido">Apellido:</label>
+	<input type="text" name="ingresarApellido" id="ingresarApellido" ng-model="nuevaPersona.apellido">
 	<br>
-	<input type="text" ng-model="nuevaPersona.apellido">
-	<br>
-	<input type="text" ng-model="nuevaPersona.edad">
-	<button ng-click="agregarPersona()">Agregar persona</button>
+	<label for="ingresarEdad">Edad:</label>
+	<input type="text" name="ingresarEdad" id="ingresarEdad	" ng-model="nuevaPersona.edad">	<br>
+	<button ng-click="agregarPersona()">Agregar persona</button><br>
 	<h3>Personas</h3>
 	<ul>
 		<li ng-repeat="persona in personas">
 			{{persona.nombre}} - {{persona.apellido}} - {{persona.edad}}
 		</li>
 	</ul>
+	<script src="controlador/controller.js"></script>
 </body>
 </html>
