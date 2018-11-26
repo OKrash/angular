@@ -18,7 +18,7 @@ function ctrlFirst(scope, crud) {
 			crud.actualizar(persona);
 		} else {
 			crud.agregar(persona);
-			socpe.nuevapersona = {};
+			scope.nuevapersona = {};
 		}
 		scope.personas = crud.listar();
 	}
