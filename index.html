@@ -1,25 +1,52 @@
 <!DOCTYPE html>
-<html ng-app="MiPrimeraApp">
+<html ng-app="app">
+
 <head>
 	<meta charset="utf-8">
-	<title>Controlador</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+	<title>Angularjss</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
 </head>
-<body ng-controller="PrimerControlador">	
-	<label for="ingresarNombre">Nombre:</label>
-	<input type="text" name="ingresarNombre" id="ingresarNombre" ng-model="nuevaPersona.nombre"><br>
-	<label for="ingresarApellido">Apellido:</label>
-	<input type="text" name="ingresarApellido" id="ingresarApellido" ng-model="nuevaPersona.apellido">
-	<br>
-	<label for="ingresarEdad">Edad:</label>
-	<input type="text" name="ingresarEdad" id="ingresarEdad	" ng-model="nuevaPersona.edad">	<br>
-	<button ng-click="agregarPersona()">Agregar persona</button><br>
-	<h3>Personas</h3>
-	<ul>
+
+<body ng-controller="FirstController">
+	<div align="center"><h1><strong>Aplicación de Votos</strong></h1></div>
+	<hr>
+	<form ng:submit="agregarpersonas(nuevapersona)">
+		<p align="center">
+			<label for="txtDni">DNI: </label>
+			<input type="text" name="txtDni" id="txtDni" ng-model="nuevapersona.dni" placeholder="Ingrese DNI">
+		</p>
+			<p align="center">
+				<button type="submit">
+					<span>Ingresar</span>
+				</button>
+				<button type="reset">
+					<span>Cancelar</span>
+				</button>
+			</p>
+	</form>
+
+	<h3>Listado de Personas</h3>
+	<ol>
 		<li ng-repeat="persona in personas">
-			{{persona.nombre}} - {{persona.apellido}} - {{persona.edad}}
+			{{persona.dni}}
 		</li>
-	</ul>
+	</ol>
+	<h3> Tabla </h3>
+	<table border="1">
+
+		<tr>
+			<th>Dni</th>
+		</tr>
+		<tr ng-repeat="(key, persona) in personas">
+			<td>{{persona.dni}} </td>
+			<!--<td>
+				<button ng:click="editar(persona)">Editar</button>
+				<button ng:click="eliminar(persona, key)">Eliminar</button>
+			</td>-->
+		</tr>
+	</table>
+	<script src="controlador/module.js"></script>
 	<script src="controlador/controller.js"></script>
 </body>
+
 </html>
