@@ -6,12 +6,20 @@ function ctrlFirst(scope,crud,  cand) {
 	scope.candidatos= cand.obtener();
 	scope.candidato={};
 	scope.persona={};
+	scope.acceso=0;
 	
 	scope.sumarvotos=function(candidato)
 	{
 		cand.sumar(candidato);
 		alert(candidato.nombre);
 
+	};
+
+	scope.abrirVentana = function (url){
+		var a = document.createElement("a");
+		//a.target = "_blank";
+		a.href = url;
+		a.click();
 	};
 
 	scope.agregarpersonas = function (persona) {
@@ -33,7 +41,9 @@ function ctrlFirst(scope,crud,  cand) {
 			crud.agregar(persona);
 			scope.personas = crud.listar();
 			scope.nuevapersona = {};
-			
+			scope.acceso = 1;
+			window.close();
+			window.open("./contenidos.html");
 		}
 		/*
 		if (persona.id) {
