@@ -17,29 +17,26 @@
 		</p>
 			<p align="center">
 				<button type="submit">
-					<span>Ingresar</span>
+					Ingresar
 				</button>
-				<button type="reset">
-					<span>Cancelar</span>
-				</button>
+				
 			</p>
 	</form>
 
-	<h3>Listado de Personas</h3>
-	<ol>
-		<li ng-repeat="persona in personas">
-			{{persona.dni}}
-		</li>
-	</ol>
-	<h3> Tabla </h3>
+	<h3> Tabla de candidatos</h3>
 	<table border="1">
 
 		<tr>
-			<th>Dni</th>
+			<th>Nombre</th>
+			<th>Avatar</th>
+			<th>Votos</th>
 		</tr>
-		<tr ng-repeat="(key, persona) in personas">
-			<td>{{persona.dni}} </td>
-			<!--<td>
+		<tr ng-repeat="candidato in candidatos">
+			<td>{{candidato.nombre}} </td>
+			<td><img src="imagenes/{{candidato.avatar}}" height="100px" width="200px"></td>
+			<td>0</td>
+			<!--<td>{{candidato.numvotos}}</td>
+			<td>
 				<button ng:click="editar(persona)">Editar</button>
 				<button ng:click="eliminar(persona, key)">Eliminar</button>
 			</td>-->
